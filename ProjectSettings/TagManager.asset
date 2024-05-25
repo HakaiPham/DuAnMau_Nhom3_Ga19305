@@ -8,17 +8,17 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - BackGround
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - LimitGround
+  - LadderGround
+  - Ground
+  - Trap
+  - item
+  - Bullet
+  - monster
+  - player
   - 
   - 
   - 
@@ -40,4 +40,31 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 2940035285
+    locked: 0
+  - name: LimitGround
+    uniqueID: 1451335061
+    locked: 0
+  - name: LadderGround
+    uniqueID: 459216795
+    locked: 0
+  - name: Ground
+    uniqueID: 912195559
+    locked: 0
+  - name: Trap
+    uniqueID: 2075793
+    locked: 0
+  - name: item
+    uniqueID: 1450542337
+    locked: 0
+  - name: Bullet
+    uniqueID: 1342472559
+    locked: 0
+  - name: monster
+    uniqueID: 2525534657
+    locked: 0
+  - name: player
+    uniqueID: 1130686341
     locked: 0
