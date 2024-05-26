@@ -3671,7 +3671,7 @@ GameObject:
   - component: {fileID: 1301124350}
   - component: {fileID: 1301124355}
   m_Layer: 13
-  m_Name: SPA_Player_Ginger_5
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
