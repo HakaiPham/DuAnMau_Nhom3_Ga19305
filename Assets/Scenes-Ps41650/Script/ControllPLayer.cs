@@ -25,7 +25,7 @@ public class ControllPlayer: MonoBehaviour
         if (horizontalInput >0||horizontalInput < 0)
         {
             _Animator.SetBool("isrun", true);
-            localScale.x = Mathf.Sign(horizontalInput);
+            localScale.x = Mathf.Abs(localScale.x) * Mathf.Sign(horizontalInput);
             transform.localScale = localScale;
             transform.localPosition += new Vector3(horizontalInput, 0, 0) * _speed * Time.deltaTime;
         }
@@ -35,9 +35,10 @@ public class ControllPlayer: MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Space)) 
         {
+            _Animator.SetBool("isjump", true);
             Jump();
         }
-        else if(!Input.GetKeyDown(KeyCode.Space))
+        else if (_Collider.IsTouchingLayers(LayerMask.GetMask("Ground")) && !Input.GetKeyDown(KeyCode.Space))
         {
             _Animator.SetBool("isjump", false);
         }
@@ -47,7 +48,6 @@ public class ControllPlayer: MonoBehaviour
         if(!_Collider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
         if (_Collider.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
-            _Animator.SetBool("isjump", true);
             _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, _JumpPower);
             //_Rigidbody.AddForce(new Vector2(0, _JumpPower));
         }
