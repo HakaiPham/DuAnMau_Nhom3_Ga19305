@@ -19,7 +19,7 @@ TagManager:
   - Bullet
   - monster
   - player
-  - 
+  - UI
   - 
   - 
   - 
@@ -67,4 +67,7 @@ TagManager:
     locked: 0
   - name: player
     uniqueID: 1130686341
+    locked: 0
+  - name: UI
+    uniqueID: 215341093
     locked: 0
