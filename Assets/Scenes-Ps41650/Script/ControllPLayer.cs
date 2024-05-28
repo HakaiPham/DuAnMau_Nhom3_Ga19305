@@ -52,11 +52,11 @@ public class ControllPLayer : MonoBehaviour
             //_Rigidbody.AddForce(new Vector2(0, _JumpPower));
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Bug")&& _Collider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (collision.gameObject.CompareTag("Bug") && _Collider.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
-            return;
+            _Rigidbody.velocity = Vector2.zero;
         }
     }
 }
