@@ -10,6 +10,8 @@ public class UiManager : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private GameObject _PanelHelp;
     [SerializeField] private GameObject _PanelAchivement;
+    [SerializeField] private GameObject _OffHelp;
+    [SerializeField] private GameObject _OffPlay;
     void Start()
     {
         _PanelAchivement.SetActive(false);
@@ -27,6 +29,8 @@ public class UiManager : MonoBehaviour
     }
     public void CloseButton2()
     {
+        _OffHelp.SetActive(true);
+        _OffPlay.SetActive(true);
         _PanelAchivement.SetActive(false);
     }
     public void HelpButton()
@@ -35,6 +39,8 @@ public class UiManager : MonoBehaviour
     }
     public void AchivementButton()
     {
+        _OffHelp.SetActive(false);
+        _OffPlay.SetActive(false);
         _PanelAchivement.SetActive(true);
     }
     public void PlayGame()
