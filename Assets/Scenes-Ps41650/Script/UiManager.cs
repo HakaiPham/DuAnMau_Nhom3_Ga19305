@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UiManager : MonoBehaviour
 {
@@ -35,5 +36,9 @@ public class UiManager : MonoBehaviour
     public void AchivementButton()
     {
         _PanelAchivement.SetActive(true);
+    }
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("PS41650");
     }
 }
