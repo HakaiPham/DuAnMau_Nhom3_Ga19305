@@ -12,10 +12,11 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject _PanelAchivement;
     [SerializeField] private GameObject _OffHelp;
     [SerializeField] private GameObject _OffPlay;
+    [SerializeField] private GameObject _MENU;
     void Start()
     {
-        _PanelAchivement.SetActive(false);
-        _PanelHelp.SetActive(false);
+        //_PanelAchivement.SetActive(false);
+        //_PanelHelp.SetActive(false);
     }
 
     // Update is called once per frame
@@ -46,5 +47,23 @@ public class UiManager : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("PS41650");
+        Time.timeScale = 1;
+    }
+    public void ReplayGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
+    }
+    public void GameHome()
+    {
+        SceneManager.LoadScene("UiGame");
+    }
+    public void ButtonCloseGame()
+    {
+        _MENU.SetActive(false);
+    }
+    public void OpenMenu()
+    {
+        _MENU.SetActive(true);
     }
 }
