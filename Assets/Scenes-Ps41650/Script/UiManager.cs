@@ -61,9 +61,11 @@ public class UiManager : MonoBehaviour
     public void ButtonCloseGame()
     {
         _MENU.SetActive(false);
+        Time.timeScale = 1;
     }
     public void OpenMenu()
     {
         _MENU.SetActive(true);
+        Time.timeScale = 0;
     }
 }

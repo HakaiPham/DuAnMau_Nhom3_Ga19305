@@ -21,6 +21,9 @@ public class ControllPLayer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _ScoreText;
     int score;
     [SerializeField] private GameObject _PanelGameover;
+    [SerializeField] private GameObject _PanelMenu;
+    [SerializeField] private Image _ReloadBulletFill;
+    [SerializeField] private GameObject _PanelReloadBullet;
     void Start()
     {
         _Animator = GetComponent<Animator>();
@@ -63,6 +66,8 @@ public class ControllPLayer : MonoBehaviour
             //Debug.Log("Thoa man dieu kien");
             _Animator.SetBool("isattack", true);
             PlayerAtack();
+            _ReloadBulletFill.fillAmount = 0; 
+            StartCoroutine(ReloadBulletImage());
             _reloadBullet = _reloadBulletTime;
         }
         else
@@ -70,6 +75,14 @@ public class ControllPLayer : MonoBehaviour
             if (!Input.GetKeyDown(KeyCode.E)) { _Animator.SetBool("isattack", false); }
         }
         ClimbLadder();
+    }
+    IEnumerator ReloadBulletImage()
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            yield return new WaitForSeconds(0.1f);
+            _ReloadBulletFill.fillAmount += 0.1f;
+        }
     }
     public void Jump()
     {
@@ -116,6 +129,20 @@ public class ControllPLayer : MonoBehaviour
         {
             Time.timeScale = 0;
             _PanelGameover.SetActive(true);
+            _PanelMenu.SetActive(false);
+            _PanelReloadBullet.SetActive(false);
+        }
+        if (collision.gameObject.CompareTag("jumpfeature"))
+        {
+            _Rigidbody.velocity = Vector2.up * 10;
+        }
+        if (collision.gameObject.CompareTag("monster"))
+        {
+            Time.timeScale = 0;
+            _PanelGameover.SetActive(true);
+            _PanelMenu.SetActive(false);
+            _PanelReloadBullet.SetActive(false);
+            Destroy(gameObject);
         }
     }
    public void ClimbLadder()
