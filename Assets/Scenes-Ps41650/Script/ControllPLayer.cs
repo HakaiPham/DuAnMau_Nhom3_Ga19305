@@ -24,6 +24,7 @@ public class ControllPLayer : MonoBehaviour
     [SerializeField] private GameObject _PanelMenu;
     [SerializeField] private Image _ReloadBulletFill;
     [SerializeField] private GameObject _PanelReloadBullet;
+    public static ControllPLayer instance;
     Memory _memoryGame;
     void Start()
     {
@@ -34,6 +35,15 @@ public class ControllPLayer : MonoBehaviour
         score = 0;
         _ScoreText.text = score.ToString("");
         _memoryGame = FindObjectOfType<Memory>();
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
@@ -182,7 +192,7 @@ public class ControllPLayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("item"))
         {
-            score += 10;
+           score+=10;
             _ScoreText.text = score.ToString("");
         }
     }
