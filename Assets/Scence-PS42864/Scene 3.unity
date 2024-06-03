@@ -8229,6 +8229,55 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 52729128072428772, guid: 1f97061b95478c74babcbdd3994b05e1, type: 3}
   m_PrefabInstance: {fileID: 1971675709}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1458142640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1458142642}
+  - component: {fileID: 1458142641}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1458142641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458142640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ea8b8b245ac284d85cf08aee61e4e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _PanelHelp: {fileID: 0}
+  _PanelAchivement: {fileID: 0}
+  _OffHelp: {fileID: 0}
+  _OffPlay: {fileID: 0}
+  _MENU: {fileID: 1657917196}
+--- !u!4 &1458142642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458142640}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.4200487, y: 5.326914, z: 748.8929}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1519474130
 GameObject:
   m_ObjectHideFlags: 0
@@ -8449,6 +8498,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b9ea3bc27ba70f4993e0f237ed53d1c, type: 3}
+--- !u!1 &1657917196 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7653047014704911552, guid: 1f97061b95478c74babcbdd3994b05e1, type: 3}
+  m_PrefabInstance: {fileID: 1971675709}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1665156967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8602,7 +8656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2747679282903948472, guid: 93b1235f5c9d8874f88e6729c26743fc, type: 3}
       propertyPath: _JumpPower
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2747679282903948472, guid: 93b1235f5c9d8874f88e6729c26743fc, type: 3}
       propertyPath: _PanelMenu
@@ -8973,3 +9027,4 @@ SceneRoots:
   - {fileID: 257285573}
   - {fileID: 1971675709}
   - {fileID: 1102777961}
+  - {fileID: 1458142642}

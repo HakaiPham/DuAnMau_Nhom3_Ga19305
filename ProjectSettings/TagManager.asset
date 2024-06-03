@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bug
+  - Skill
+  - monster
+  - item
+  - ladder
+  - trap
+  - NextGame
+  - jumpfeature
   layers:
   - Default
   - TransparentFX
@@ -19,10 +27,10 @@ TagManager:
   - Bullet
   - monster
   - player
-  - 
-  - 
-  - 
-  - 
+  - ladder
+  - MoveLeft
+  - MoveRight
+  - UI
   - 
   - 
   - 
@@ -67,4 +75,10 @@ TagManager:
     locked: 0
   - name: player
     uniqueID: 1130686341
+    locked: 0
+  - name: ladder
+    uniqueID: 501459011
+    locked: 0
+  - name: UI
+    uniqueID: 215341093
     locked: 0
