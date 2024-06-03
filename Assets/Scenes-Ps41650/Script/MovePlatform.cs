@@ -16,7 +16,7 @@ public class MovePlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var platformPosition = transform.position;
+        var platformPosition = transform.localPosition;
         if (ismove == true)
         {
             platformPosition.x += _platformSpeed * Time.deltaTime;
@@ -37,6 +37,6 @@ public class MovePlatform : MonoBehaviour
             ismove = true;
             platformPosition.x = _Left;
         }
-        transform.position = platformPosition;
+        transform.localPosition = platformPosition;
     }
 }

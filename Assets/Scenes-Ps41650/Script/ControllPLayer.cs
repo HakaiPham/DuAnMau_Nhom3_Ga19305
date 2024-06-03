@@ -19,11 +19,12 @@ public class ControllPLayer : MonoBehaviour
     [SerializeField] private float _reloadBulletTime;
     [SerializeField] private float _speedClimp;
     [SerializeField] private TextMeshProUGUI _ScoreText;
-    int score;
+    public static int score;
     [SerializeField] private GameObject _PanelGameover;
     [SerializeField] private GameObject _PanelMenu;
     [SerializeField] private Image _ReloadBulletFill;
     [SerializeField] private GameObject _PanelReloadBullet;
+    Memory _memoryGame;
     void Start()
     {
         _Animator = GetComponent<Animator>();
@@ -32,6 +33,7 @@ public class ControllPLayer : MonoBehaviour
         _reloadBullet = 0;
         score = 0;
         _ScoreText.text = score.ToString("");
+        _memoryGame = FindObjectOfType<Memory>();
     }
 
     // Update is called once per frame
@@ -183,5 +185,9 @@ public class ControllPLayer : MonoBehaviour
             score += 10;
             _ScoreText.text = score.ToString("");
         }
+    }
+    public static int GetScore()
+    {
+        return score;
     }
 }
