@@ -13,19 +13,17 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject _OffHelp;
     [SerializeField] private GameObject _OffPlay;
     [SerializeField] private GameObject _MENU;
-    [SerializeField] private GameObject _player;
     Memory _memoryGame;
     void Start()
     {
         //_PanelAchivement.SetActive(false);
         //_PanelHelp.SetActive(false);
-        _memoryGame = FindObjectOfType<Memory>();
     }
 
     // Update is called once per frame
     void Update()
     {
-      
+        
     }
     public void CloseButton()
     {
