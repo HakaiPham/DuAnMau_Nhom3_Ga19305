@@ -16,11 +16,7 @@ public class UiManager : MonoBehaviour
     Memory _memoryGame;
     void Start()
     {
-<<<<<<< HEAD
-=======
-        //_PanelAchivement.SetActive(false);
-        //_PanelHelp.SetActive(false);
->>>>>>> main
+
     }
 
     // Update is called once per frame
