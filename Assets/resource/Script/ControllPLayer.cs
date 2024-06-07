@@ -19,7 +19,7 @@ public class ControllPLayer : MonoBehaviour
     [SerializeField] private float _reloadBulletTime;
     [SerializeField] private float _speedClimp;
     [SerializeField] private TextMeshProUGUI _ScoreText;
-    public static int score;
+    public static int score=0;
     [SerializeField] private GameObject _PanelGameover;
     [SerializeField] private GameObject _PanelMenu;
     [SerializeField] private Image _ReloadBulletFill;
@@ -32,18 +32,8 @@ public class ControllPLayer : MonoBehaviour
         _Collider = GetComponent<BoxCollider2D>();
         _Rigidbody = GetComponent<Rigidbody2D>();
         _reloadBullet = 0;
-        score = 0;
         _ScoreText.text = score.ToString("");
         _memoryGame = FindObjectOfType<Memory>();
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
@@ -102,7 +92,6 @@ public class ControllPLayer : MonoBehaviour
         if (_Collider.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, _JumpPower);
-            //_Rigidbody.AddForce(new Vector2(0, _JumpPower));
             if(Input.GetKeyDown(KeyCode.E) ) 
             {
                 _Animator.SetBool("isJumbOrAttack", true);
