@@ -12,20 +12,22 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject _PanelAchivement;
     [SerializeField] private GameObject _OffHelp;
     [SerializeField] private GameObject _OffPlay;
+<<<<<<< HEAD:Assets/Scenes-Ps41650/Script/UiManager.cs
+=======
     [SerializeField] private GameObject _MENU;
     [SerializeField] private GameObject _player;
     Memory _memoryGame;
+>>>>>>> main:Assets/resource/Script/UiManager.cs
     void Start()
     {
-        //_PanelAchivement.SetActive(false);
-        //_PanelHelp.SetActive(false);
-        _memoryGame = FindObjectOfType<Memory>();
+        _PanelAchivement.SetActive(false);
+        _PanelHelp.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-      
+        
     }
     public void CloseButton()
     {
@@ -49,6 +51,9 @@ public class UiManager : MonoBehaviour
     }
     public void PlayGame()
     {
+<<<<<<< HEAD:Assets/Scenes-Ps41650/Script/UiManager.cs
+        SceneManager.LoadScene("PS41650");
+=======
         SceneManager.LoadScene("Scene1");
         //_player.SetActive(true);
         ControllPLayer.score = 0;
@@ -75,5 +80,6 @@ public class UiManager : MonoBehaviour
     {
         _MENU.SetActive(true);
         Time.timeScale = 0;
+>>>>>>> main:Assets/resource/Script/UiManager.cs
     }
 }
