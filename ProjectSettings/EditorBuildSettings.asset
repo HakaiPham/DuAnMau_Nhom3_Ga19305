@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/UI/UiGame.unity
     guid: 8fb997f683259884b9f830e529223fd6
   - enabled: 1
-    path: Assets/Scenes-Ps41650/PS41650.unity
+    path: Assets/Level/Map1/Scene1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scence-PS42864/Scene 3.unity
+    path: Assets/Level/Map2/Scene 3.unity
     guid: 53891ce74dac4a143b826bcc6a67efb7
   m_configObjects: {}

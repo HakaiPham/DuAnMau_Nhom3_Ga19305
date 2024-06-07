@@ -13,6 +13,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject _OffHelp;
     [SerializeField] private GameObject _OffPlay;
     [SerializeField] private GameObject _MENU;
+    [SerializeField] private GameObject _player;
     Memory _memoryGame;
     void Start()
     {
@@ -48,17 +49,22 @@ public class UiManager : MonoBehaviour
     }
     public void PlayGame()
     {
-        SceneManager.LoadScene("PS41650");
+        SceneManager.LoadScene("Scene1");
+        //_player.SetActive(true);
+        ControllPLayer.score = 0;
         Time.timeScale = 1;
     }
     public void ReplayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        ControllPLayer.score = 0;
+
         Time.timeScale = 1;
     }
     public void GameHome()
     {
         SceneManager.LoadScene("UiGame");
+        //_player.SetActive(false);
     }
     public void ButtonCloseGame()
     {
