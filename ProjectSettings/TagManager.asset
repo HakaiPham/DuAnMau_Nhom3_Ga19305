@@ -12,6 +12,7 @@ TagManager:
   - trap
   - NextGame
   - jumpfeature
+  - Wall
   layers:
   - Default
   - TransparentFX
