@@ -5,8 +5,8 @@ using UnityEngine;
 public class Blink : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private float _Right;
-    [SerializeField] private float _Left;
+    [SerializeField] private float _Right = 7.35f;
+    [SerializeField] private float _Left = -7.14f;
     [SerializeField] private float _Speed;
     Animator _animator;
     Rigidbody2D _rb;
@@ -19,21 +19,23 @@ public class Blink : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _currentTime = _WaitTime; //Khởi tạo thời gian dừng
         ismove = false;
+        StartCoroutine(MoveBlinkCoroutine());
     }
 
     // Update is called once per frame
     void Update()
     {
-        MoveBlink();
+        //MoveBlink();
     }
     public void MoveBlink()
     {
-        var blinkPosition = transform.position;
+        var blinkPosition = transform.localPosition;
         //Debug.Log("Vi tri hien tai: " + blinkPosition.x);
         if (blinkPosition.x >= _Right || blinkPosition.x <= _Left)
         {
            ismove = !ismove;//Đổi hướng di chuyển
             _currentTime = _WaitTime;//Đặt lại thời gian dừng
+            Debug.Log("Đổi hướng: " + (ismove ? "trái" : "phải"));
         }
         if (_currentTime > 0)
         {
@@ -51,6 +53,28 @@ public class Blink : MonoBehaviour
             Debug.Log("Đang di chuyển: " + (ismove ? "phải" : "trái"));
         }
     }
+    private IEnumerator MoveBlinkCoroutine()
+    {
+        while (true)
+        {
+            var blinkPosition = transform.localPosition;
+
+            // Kiểm tra giới hạn và đổi hướng nếu cần
+            if (blinkPosition.x >= _Right || blinkPosition.x <= _Left)
+            {
+                ismove = !ismove; // Đổi hướng di chuyển
+                Debug.Log("Đổi hướng: " + (ismove ? "phải" : "trái"));
+                yield return new WaitForSeconds(_WaitTime); // Đợi trước khi đổi hướng
+            }
+
+            // Di chuyển đối tượng
+            _rb.velocity = ismove ? Vector2.right * _Speed : Vector2.left * _Speed;
+            Debug.Log("Đang di chuyển: " + (ismove ? "phải" : "trái") + " với tốc độ: " + _rb.velocity);
+
+            yield return null; // Đợi đến khung hình tiếp theo
+        }
+    }
+
     public void OffAnimation()
     {
         _animator.SetBool("isBlinkAttack", false);
