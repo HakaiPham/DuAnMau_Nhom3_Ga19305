@@ -66,7 +66,8 @@ public class ControllPLayer : MonoBehaviour
         if (_reloadBullet <= 0&&Input.GetKeyDown(KeyCode.E))
         {
             //Debug.Log("Thoa man dieu kien");
-            _Animator.SetBool("isattack", true);
+            //_Animator.SetBool("isattack", true);
+            _Animator.SetTrigger("isattack 0");
             PlayerAtack();
             _ReloadBulletFill.fillAmount = 0; 
             StartCoroutine(ReloadBulletImage());
@@ -145,6 +146,13 @@ public class ControllPLayer : MonoBehaviour
             _PanelReloadBullet.SetActive(false);
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("Blink"))
+        {
+            Time.timeScale = 0;
+            _PanelGameover.SetActive(true);
+            _PanelMenu.SetActive(false);
+            _PanelReloadBullet.SetActive(false);
+        }
     }
    public void ClimbLadder()
     {
@@ -184,6 +192,14 @@ public class ControllPLayer : MonoBehaviour
            score+=10;
             _ScoreText.text = score.ToString("");
         }
+        if (collision.gameObject.CompareTag("Fire"))
+        {
+            Time.timeScale = 0;
+            _PanelGameover.SetActive(true);
+            _PanelMenu.SetActive(false);
+            _PanelReloadBullet.SetActive(false);
+        }
+
     }
     public static int GetScore()
     {
