@@ -13,6 +13,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject _OffHelp;
     [SerializeField] private GameObject _OffPlay;
     [SerializeField] private GameObject _MENU;
+    [SerializeField] private GameObject _PanelLevel;
     Memory _memoryGame;
     void Start()
     {
@@ -46,8 +47,25 @@ public class UiManager : MonoBehaviour
     }
     public void PlayGame()
     {
-        SceneManager.LoadScene("Scene1");
+        _OffHelp.SetActive(false);
+        _PanelLevel.SetActive(true);
         //_player.SetActive(true);
+    }
+    public void Level1()
+    {
+        SceneManager.LoadScene("Scene1");
+        ControllPLayer.score = 0;
+        Time.timeScale = 1;
+    }
+    public void Level2()
+    {
+        SceneManager.LoadScene("Scene 3");
+        ControllPLayer.score = 0;
+        Time.timeScale = 1;
+    }
+    public void level3()
+    {
+        SceneManager.LoadScene("Scene2");
         ControllPLayer.score = 0;
         Time.timeScale = 1;
     }

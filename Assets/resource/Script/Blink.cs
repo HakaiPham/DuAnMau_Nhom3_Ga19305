@@ -27,40 +27,14 @@ public class Blink : MonoBehaviour
     {
         //MoveBlink();
     }
-    public void MoveBlink()
-    {
-        var blinkPosition = transform.localPosition;
-        //Debug.Log("Vi tri hien tai: " + blinkPosition.x);
-        if (blinkPosition.x >= _Right || blinkPosition.x <= _Left)
-        {
-           ismove = !ismove;//Đổi hướng di chuyển
-            _currentTime = _WaitTime;//Đặt lại thời gian dừng
-            Debug.Log("Đổi hướng: " + (ismove ? "trái" : "phải"));
-        }
-        if (_currentTime > 0)
-        {
-            _currentTime -= Time.deltaTime;
-            _rb.velocity = Vector2.zero;//Dừng đối tượng trong thời gian chờ
-            Debug.Log("Thoi gian chờ còn :" + _currentTime);
-        }
-        else
-        {
-            if(_currentTime < 0)
-            {
-                _currentTime = 0;   
-            }
-            _rb.velocity = ismove ? Vector2.right * _Speed : Vector2.left * _Speed;
-            Debug.Log("Đang di chuyển: " + (ismove ? "phải" : "trái"));
-        }
-    }
     private IEnumerator MoveBlinkCoroutine()
     {
         while (true)
         {
-            var blinkPosition = transform.localPosition;
+            var blinkPosition = transform.position;
 
             // Kiểm tra giới hạn và đổi hướng nếu cần
-            if (blinkPosition.x >= _Right || blinkPosition.x <= _Left)
+            if (blinkPosition.x >= _Right  || blinkPosition.x <= _Left)
             {
                 ismove = !ismove; // Đổi hướng di chuyển
                 Debug.Log("Đổi hướng: " + (ismove ? "phải" : "trái"));
@@ -74,18 +48,17 @@ public class Blink : MonoBehaviour
             yield return null; // Đợi đến khung hình tiếp theo
         }
     }
-
-    public void OffAnimation()
-    {
-        _animator.SetBool("isBlinkAttack", false);
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
-            _animator.SetBool("isBlinkAttack", true);
+            _animator.SetBool("Blink", true);
             Invoke("OffAnimation", 0.3f);
         }
+    }
+    public void OffAnimation()
+    {
+        _animator.SetBool("Blink", false);
     }
     //private void OnCollisionExit2D(Collision2D collision)
     //{

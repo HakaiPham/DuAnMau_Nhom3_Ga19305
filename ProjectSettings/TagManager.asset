@@ -13,6 +13,8 @@ TagManager:
   - NextGame
   - jumpfeature
   - Wall
+  - Blink
+  - Fire
   layers:
   - Default
   - TransparentFX
