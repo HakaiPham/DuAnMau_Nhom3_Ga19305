@@ -14,10 +14,11 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject _OffPlay;
     [SerializeField] private GameObject _MENU;
     [SerializeField] private GameObject _PanelLevel;
+    AudioSource _AudioSource;
     Memory _memoryGame;
     void Start()
     {
-
+        _AudioSource = FindObjectOfType<AudioSource>();
     }
 
     // Update is called once per frame
@@ -89,6 +90,7 @@ public class UiManager : MonoBehaviour
     public void OpenMenu()
     {
         _MENU.SetActive(true);
+        _AudioSource.Stop();
         Time.timeScale = 0;
     }
 }

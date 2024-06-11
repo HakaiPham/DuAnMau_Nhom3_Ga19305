@@ -220,9 +220,8 @@ public class ControllPLayer : MonoBehaviour
     }
     IEnumerator WaitStopMusic()
     {
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(0.5f);
         _audioSource.Stop();
-
     }
     public static int GetScore()
     {
