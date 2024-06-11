@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6025342988994455346}
   - component: {fileID: 6423728327742877767}
-  - component: {fileID: 1515748487473856147}
   - component: {fileID: 49592674842267743}
   - component: {fileID: 4220648251249128095}
   - component: {fileID: 8692193485082625288}
+  - component: {fileID: 1132504453755635162}
   m_Layer: 0
   m_Name: Blink
-  m_TagString: Untagged
+  m_TagString: Blink
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,10 +74,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1130686341
+  m_SortingLayer: 9
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a9b63e993c6643d41bf71d00f5ac1ca2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89ecd016da20fe84ca08cb1b06c24094, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,51 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1515748487473856147
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6362374122381454241}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0034807995, y: -0.0052102506}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.42, y: 0.42}
-    newSize: {x: 0.42, y: 0.42}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.3640949, y: 0.33663577}
-  m_EdgeRadius: 0
 --- !u!50 &49592674842267743
 Rigidbody2D:
   serializedVersion: 4
@@ -170,7 +125,7 @@ Animator:
   m_GameObject: {fileID: 6362374122381454241}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 64b42edb5aca42941bdad6a5891e1e33, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4b9318679fb63574d83c11c5cbe07125, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -193,7 +148,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84191ee3cc5ed69409f56e77abe94fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Right: 7.3
-  _Left: -7.4
+  _Right: 7.34
+  _Left: -7.28
   _Speed: 7
-  _WaitTime: 1
+  _WaitTime: 2.3
+--- !u!61 &1132504453755635162
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6362374122381454241}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.54, y: 0.52}
+    newSize: {x: 0.42, y: 0.42}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.38, y: 0.38}
+  m_EdgeRadius: 0

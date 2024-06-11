@@ -13,11 +13,12 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject _OffHelp;
     [SerializeField] private GameObject _OffPlay;
     [SerializeField] private GameObject _MENU;
+    [SerializeField] private GameObject _PanelLevel;
+    AudioSource _AudioSource;
     Memory _memoryGame;
     void Start()
     {
-        //_PanelAchivement.SetActive(false);
-        //_PanelHelp.SetActive(false);
+        _AudioSource = FindObjectOfType<AudioSource>();
     }
 
     // Update is called once per frame
@@ -47,8 +48,25 @@ public class UiManager : MonoBehaviour
     }
     public void PlayGame()
     {
-        SceneManager.LoadScene("Scene1");
+        _OffHelp.SetActive(false);
+        _PanelLevel.SetActive(true);
         //_player.SetActive(true);
+    }
+    public void Level1()
+    {
+        SceneManager.LoadScene("Scene1");
+        ControllPLayer.score = 0;
+        Time.timeScale = 1;
+    }
+    public void Level2()
+    {
+        SceneManager.LoadScene("Scene 3");
+        ControllPLayer.score = 0;
+        Time.timeScale = 1;
+    }
+    public void level3()
+    {
+        SceneManager.LoadScene("scene2_new");
         ControllPLayer.score = 0;
         Time.timeScale = 1;
     }
@@ -72,6 +90,7 @@ public class UiManager : MonoBehaviour
     public void OpenMenu()
     {
         _MENU.SetActive(true);
+        _AudioSource.Stop();
         Time.timeScale = 0;
     }
 }

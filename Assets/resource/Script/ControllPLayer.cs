@@ -25,6 +25,11 @@ public class ControllPLayer : MonoBehaviour
     [SerializeField] private Image _ReloadBulletFill;
     [SerializeField] private GameObject _PanelReloadBullet;
     public static ControllPLayer instance;
+    AudioSource _audioSource;
+    [SerializeField] AudioClip _ClipGameOver;
+    [SerializeField] AudioClip _ClipJump;
+    [SerializeField] AudioClip _ClipBowAttack;
+    [SerializeField] AudioClip _ClipCollectItem;
     Memory _memoryGame;
     void Start()
     {
@@ -34,6 +39,7 @@ public class ControllPLayer : MonoBehaviour
         _reloadBullet = 0;
         _ScoreText.text = score.ToString("");
         _memoryGame = FindObjectOfType<Memory>();
+        _audioSource = FindObjectOfType<AudioSource>();
     }
 
     // Update is called once per frame
@@ -55,6 +61,7 @@ public class ControllPLayer : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space)) 
         {
             _Animator.SetBool("isjump", true);
+            _audioSource.PlayOneShot(_ClipJump);
             Jump();
         }
         else if (_Collider.IsTouchingLayers(LayerMask.GetMask("Ground")) && !Input.GetKeyDown(KeyCode.Space))
@@ -66,7 +73,9 @@ public class ControllPLayer : MonoBehaviour
         if (_reloadBullet <= 0&&Input.GetKeyDown(KeyCode.E))
         {
             //Debug.Log("Thoa man dieu kien");
-            _Animator.SetBool("isattack", true);
+            //_Animator.SetBool("isattack", true);
+            _audioSource.PlayOneShot(_ClipBowAttack);
+            _Animator.SetTrigger("isattack 0");
             PlayerAtack();
             _ReloadBulletFill.fillAmount = 0; 
             StartCoroutine(ReloadBulletImage());
@@ -129,9 +138,11 @@ public class ControllPLayer : MonoBehaviour
         if (collision.gameObject.CompareTag("trap"))
         {
             Time.timeScale = 0;
+            _audioSource.PlayOneShot(_ClipGameOver);
             _PanelGameover.SetActive(true);
             _PanelMenu.SetActive(false);
             _PanelReloadBullet.SetActive(false);
+            StartCoroutine(WaitStopMusic());
         }
         if (collision.gameObject.CompareTag("jumpfeature"))
         {
@@ -140,11 +151,22 @@ public class ControllPLayer : MonoBehaviour
         if (collision.gameObject.CompareTag("monster"))
         {
             Time.timeScale = 0;
+            _audioSource.PlayOneShot(_ClipGameOver);
             _PanelGameover.SetActive(true);
             _PanelMenu.SetActive(false);
             _PanelReloadBullet.SetActive(false);
-            Destroy(gameObject);
+            StartCoroutine(WaitStopMusic());
         }
+        if (collision.gameObject.CompareTag("Blink"))
+        {
+            Time.timeScale = 0;
+            _audioSource.PlayOneShot(_ClipGameOver);
+            _PanelGameover.SetActive(true);
+            _PanelMenu.SetActive(false);
+            _PanelReloadBullet.SetActive(false);
+            StartCoroutine(WaitStopMusic());
+        }
+
     }
    public void ClimbLadder()
     {
@@ -181,9 +203,25 @@ public class ControllPLayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("item"))
         {
-           score+=10;
+            _audioSource.PlayOneShot(_ClipCollectItem);
+            score +=10;
             _ScoreText.text = score.ToString("");
         }
+        if (collision.gameObject.CompareTag("Fire"))
+        {
+            Time.timeScale = 0;
+            _audioSource.PlayOneShot(_ClipGameOver);
+            _PanelGameover.SetActive(true);
+            _PanelMenu.SetActive(false);
+            _PanelReloadBullet.SetActive(false);
+            StartCoroutine(WaitStopMusic());
+        }
+
+    }
+    IEnumerator WaitStopMusic()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        _audioSource.Stop();
     }
     public static int GetScore()
     {

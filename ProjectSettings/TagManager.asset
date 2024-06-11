@@ -13,6 +13,9 @@ TagManager:
   - NextGame
   - jumpfeature
   - Wall
+  - Blink
+  - Fire
+  - GateNextGame
   layers:
   - Default
   - TransparentFX
@@ -31,8 +34,8 @@ TagManager:
   - ladder
   - MoveLeft
   - MoveRight
+  - GateNextGame
   - UI
-  - 
   - 
   - 
   - 
