@@ -200,8 +200,11 @@ MonoBehaviour:
   _locatedAttack: {fileID: 4174018589269068051}
   _reloadBulletTime: 1
   _speedClimp: 3
-  _ScoreText: {fileID: 0}
+  _ScoreText: {fileID: 9187817283860919328, guid: 0ad5030725b071944afed0bbf5627eef, type: 3}
   _PanelGameover: {fileID: 0}
+  _PanelMenu: {fileID: 0}
+  _ReloadBulletFill: {fileID: 0}
+  _PanelReloadBullet: {fileID: 0}
 --- !u!1 &6582965053561689713
 GameObject:
   m_ObjectHideFlags: 0
