@@ -30,7 +30,7 @@ public class ControllPLayer : MonoBehaviour
     [SerializeField] AudioClip _ClipJump;
     [SerializeField] AudioClip _ClipBowAttack;
     [SerializeField] AudioClip _ClipCollectItem;
-    Memory _memoryGame;
+    //Memory _memoryGame;
     void Start()
     {
         _Animator = GetComponent<Animator>();
@@ -38,7 +38,7 @@ public class ControllPLayer : MonoBehaviour
         _Rigidbody = GetComponent<Rigidbody2D>();
         _reloadBullet = 0;
         _ScoreText.text = score.ToString("");
-        _memoryGame = FindObjectOfType<Memory>();
+        //_memoryGame = FindObjectOfType<Memory>();
         _audioSource = FindObjectOfType<AudioSource>();
     }
 
