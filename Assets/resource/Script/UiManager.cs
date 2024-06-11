@@ -66,7 +66,7 @@ public class UiManager : MonoBehaviour
     }
     public void level3()
     {
-        SceneManager.LoadScene("Scene2");
+        SceneManager.LoadScene("scene2_new");
         ControllPLayer.score = 0;
         Time.timeScale = 1;
     }

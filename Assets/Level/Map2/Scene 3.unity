@@ -198,6 +198,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2747679282903948472, guid: 93b1235f5c9d8874f88e6729c26743fc, type: 3}
+      propertyPath: _ClipJump
+      value: 
+      objectReference: {fileID: 8300000, guid: 1f41181011f08a144b4c3686beedbf2b, type: 3}
+    - target: {fileID: 2747679282903948472, guid: 93b1235f5c9d8874f88e6729c26743fc, type: 3}
       propertyPath: _JumpPower
       value: 8
       objectReference: {fileID: 0}
@@ -210,9 +214,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 251583281}
     - target: {fileID: 2747679282903948472, guid: 93b1235f5c9d8874f88e6729c26743fc, type: 3}
+      propertyPath: _ClipGameOver
+      value: 
+      objectReference: {fileID: 8300000, guid: 4498c39449e419d4a93cd495cc1a9b92, type: 3}
+    - target: {fileID: 2747679282903948472, guid: 93b1235f5c9d8874f88e6729c26743fc, type: 3}
+      propertyPath: _ClipBowAttack
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d3011711cedfd542aa4b7a6336ebe84, type: 3}
+    - target: {fileID: 2747679282903948472, guid: 93b1235f5c9d8874f88e6729c26743fc, type: 3}
       propertyPath: _PanelGameover
       value: 
       objectReference: {fileID: 251583285}
+    - target: {fileID: 2747679282903948472, guid: 93b1235f5c9d8874f88e6729c26743fc, type: 3}
+      propertyPath: _ClipCollectItem
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a46a49e2e7c1ff4eb62fe67b92ad81d, type: 3}
     - target: {fileID: 2747679282903948472, guid: 93b1235f5c9d8874f88e6729c26743fc, type: 3}
       propertyPath: _ReloadBulletFill
       value: 
@@ -9735,6 +9751,7 @@ GameObject:
   - component: {fileID: 598209837}
   - component: {fileID: 598209836}
   - component: {fileID: 598209835}
+  - component: {fileID: 598209838}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9816,6 +9833,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &598209838
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598209834}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: abb417c53d6daf14698c5a2a0a1ff108, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &667484315 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5385870715301385041, guid: be87309396c8520428f8b70c31c7fb40, type: 3}
@@ -13016,7 +13129,7 @@ MonoBehaviour:
   _OffHelp: {fileID: 0}
   _OffPlay: {fileID: 0}
   _MENU: {fileID: 251583283}
-  _player: {fileID: 0}
+  _PanelLevel: {fileID: 0}
 --- !u!4 &1458142642
 Transform:
   m_ObjectHideFlags: 0

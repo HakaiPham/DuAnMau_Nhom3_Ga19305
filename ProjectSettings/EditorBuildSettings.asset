@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Level/Map2/Scene 3.unity
     guid: 53891ce74dac4a143b826bcc6a67efb7
   - enabled: 1
-    path: Assets/Level/Map3/Scene2.unity
-    guid: 30fca9610e173c94a9dc14e1823134c2
+    path: Assets/Scence-PS41718/scene2_new.unity
+    guid: 66a8608cccaa2ae46afcc92ff7711061
   m_configObjects: {}
