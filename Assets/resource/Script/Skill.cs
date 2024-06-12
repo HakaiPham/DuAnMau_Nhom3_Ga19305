@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,12 +16,12 @@ public class Skill : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("monster"))
+        if (collision.gameObject.CompareTag("monster")) // khi viên đạn va chạm với quái
         {
-            Destroy(collision.gameObject);
-            _rb.velocity = Vector2.zero;
-            _animator.SetBool("isskill", true);
-            Invoke("DestroySkill", 1f);
+            Destroy(collision.gameObject); //tiêu diệt quái
+            _rb.velocity = Vector2.zero;// viên đạn sẽ dừng lại
+            _animator.SetBool("isskill", true);// chạy aniamtion viên đạn bị phá hũy
+            Invoke("DestroySkill", 1f);// sau khi đợi animation chạy xong sẽ tiến hành phá hũy viên đạn
         }
     }
     public void DestroySkill()

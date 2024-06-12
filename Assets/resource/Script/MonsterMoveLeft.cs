@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +11,7 @@ public class MonsterMoveLeft : MonoBehaviour
     bool isTurn;
     void Start()
     {
-        isTurn = false;
+        isTurn = false; // code này quái sẽ di chuyển sang trái đầu tiên
     }
 
     // Update is called once per frame
